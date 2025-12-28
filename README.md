@@ -1,220 +1,139 @@
-# C++ Array Practice Solutions
-
-## 1. Store 5 integers and find sum
-```cpp
-#include <iostream>
-using namespace std;
-
-int main() {
-    int arr[5], sum = 0;
-
-    cout << "Enter 5 integers:\n";
-    for(int i = 0; i < 5; i++) {
-        cin >> arr[i];
-        sum += arr[i];
-    }
-
-    cout << "Sum = " << sum;
-    return 0;
-}
-```
-
-### Output
-```
-Enter 5 integers:
-10
-20
-30
-40
-50
-Sum = 150
-```
+# Assignment  
+## Random Variables – Continuous Case
 
 ---
 
-## 2. Character array reverse
-```cpp
-#include <iostream>
-using namespace std;
+## Question (Part b)
 
-int main() {
-    char arr[5];
+A continuous random variable \(X\) has the probability density function (p.d.f.):
 
-    cout << "Enter 5 characters:\n";
-    for(int i = 0; i < 5; i++)
-        cin >> arr[i];
+\[
+f(x) =
+\begin{cases}
+A(2-x)(2+x), & 0 \le x \le 2 \\
+0, & \text{elsewhere}
+\end{cases}
+\]
 
-    cout << "Reversed: ";
-    for(int i = 4; i >= 0; i--)
-        cout << arr[i] << " ";
-
-    return 0;
-}
-```
-
-### Output
-```
-Enter 5 characters:
-a b c d e
-Reversed: e d c b a
-```
+Find:  
+(i) the value of \(A\)  
+(ii) \(P(X = \tfrac{1}{2})\)  
+(iii) \(P(X \le 1)\)  
+(iv) \(P(X \ge 2)\)  
+(v) \(P(1 \le X \le 2)\)
 
 ---
 
-## 3. Highest marks
-```cpp
-#include <iostream>
-using namespace std;
+## Solution
 
-int main() {
-    int marks[5], highest = 0;
+### (i) Finding the value of \(A\)
 
-    cout << "Enter marks of 5 students:\n";
-    for(int i = 0; i < 5; i++) {
-        cin >> marks[i];
-        if(marks[i] > highest)
-            highest = marks[i];
-    }
+For a valid probability density function,
 
-    cout << "Highest Mark = " << highest;
-    return 0;
-}
-```
+\[
+\int_{-\infty}^{\infty} f(x)\,dx = 1
+\]
 
-### Output
-```
-Enter marks of 5 students:
-70
-80
-75
-65
-90
-Highest Mark = 90
-```
+\[
+\int_0^2 A(2-x)(2+x)\,dx = 1
+\]
 
----
+**Simplify:**
 
-## 4. Dynamic array largest element
-```cpp
-#include <iostream>
-using namespace std;
+\[
+(2-x)(2+x) = 4 - x^2
+\]
 
-int main() {
-    int n;
-    cout << "Enter size: ";
-    cin >> n;
+\[
+A\int_0^2 (4 - x^2)\,dx = 1
+\]
 
-    int *arr = new int[n];
-    cout << "Enter " << n << " numbers:\n";
+\[
+A\left[4x - \frac{x^3}{3}\right]_0^2 = 1
+\]
 
-    int largest = -1e9;
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
-        if(arr[i] > largest)
-            largest = arr[i];
-    }
+\[
+A\left(8 - \frac{8}{3}\right) = 1
+\]
 
-    cout << "Largest = " << largest;
+\[
+A\left(\frac{16}{3}\right) = 1
+\]
 
-    delete[] arr;
-    return 0;
-}
-```
-
-### Output
-```
-Enter size: 5
-Enter 5 numbers:
-5
-10
-20
-15
-7
-Largest = 20
-```
+\[
+\boxed{A = \frac{3}{16}}
+\]
 
 ---
 
-## 5. Dynamic array average
-```cpp
-#include <iostream>
-using namespace std;
+### (ii) Finding \(P(X = \tfrac{1}{2})\)
 
-int main() {
-    int n;
-    cout << "Enter size: ";
-    cin >> n;
+Since \(X\) is a continuous random variable, the probability at a single point is zero.
 
-    int *arr = new int[n];
-    cout << "Enter " << n << " numbers:\n";
-
-    double sum = 0;
-    for(int i = 0; i < n; i++) {
-        cin >> arr[i];
-        sum += arr[i];
-    }
-
-    cout << "Average = " << sum / n;
-
-    delete[] arr;
-    return 0;
-}
-```
-
-### Output
-```
-Enter size: 5
-Enter 5 numbers:
-10
-20
-30
-40
-50
-Average = 30
-```
+\[
+\boxed{P(X = \tfrac{1}{2}) = 0}
+\]
 
 ---
 
-## 6. Dynamic array of names
-```cpp
-#include <iostream>
-using namespace std;
+### (iii) Finding \(P(X \le 1)\)
 
-int main() {
-    int n;
-    cout << "How many names? ";
-    cin >> n;
+\[
+P(X \le 1) = \int_0^1 \frac{3}{16}(4 - x^2)\,dx
+\]
 
-    char **names = new char*[n];
+\[
+= \frac{3}{16}\left[4x - \frac{x^3}{3}\right]_0^1
+\]
 
-    for(int i = 0; i < n; i++) {
-        names[i] = new char[50];
-        cout << "Enter name " << i + 1 << ": ";
-        cin >> names[i];
-    }
+\[
+= \frac{3}{16}\left(4 - \frac{1}{3}\right)
+\]
 
-    cout << "\nNames entered:\n";
-    for(int i = 0; i < n; i++)
-        cout << names[i] << endl;
+\[
+= \frac{3}{16} \cdot \frac{11}{3}
+\]
 
-    for(int i = 0; i < n; i++)
-        delete[] names[i];
+\[
+\boxed{P(X \le 1) = \frac{11}{16}}
+\]
 
-    delete[] names;
+---
 
-    return 0;
-}
-```
+### (iv) Finding \(P(X \ge 2)\)
 
-### Output
-```
-How many names? 3
-Enter name 1: Ali
-Enter name 2: Sara
-Enter name 3: Ahmed
+The p.d.f. is zero for \(x > 2\), and the probability at \(x = 2\) is also zero.
 
-Names entered:
-Ali
-Sara
-Ahmed
-```
+\[
+\boxed{P(X \ge 2) = 0}
+\]
+
+---
+
+### (v) Finding \(P(1 \le X \le 2)\)
+
+\[
+P(1 \le X \le 2) = 1 - P(X \le 1)
+\]
+
+\[
+= 1 - \frac{11}{16}
+\]
+
+\[
+\boxed{P(1 \le X \le 2) = \frac{5}{16}}
+\]
+
+---
+
+## Final Answers
+
+\[
+\begin{aligned}
+\text{(i)}\;& A = \frac{3}{16} \\
+\text{(ii)}\;& P(X = \tfrac{1}{2}) = 0 \\
+\text{(iii)}\;& P(X \le 1) = \frac{11}{16} \\
+\text{(iv)}\;& P(X \ge 2) = 0 \\
+\text{(v)}\;& P(1 \le X \le 2) = \frac{5}{16}
+\end{aligned}
+\]
