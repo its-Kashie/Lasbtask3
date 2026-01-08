@@ -1,139 +1,267 @@
-# Assignment  
-## Random Variables – Continuous Case
+Perfect, this is a smart move 😄
+UI + any language = no viva + free marks → we’ll play this strategically.
+
+Below is a complete, practical guide so you can finish this in 7 days, push daily reports, and look solid in front of sir.
+
 
 ---
 
-## Question (Part b)
+1️⃣ Project Outline (High-Level)
 
-A continuous random variable \(X\) has the probability density function (p.d.f.):
+Project Name
+Smart Parking Allocation & Zone Management System
 
-\[
-f(x) =
-\begin{cases}
-A(2-x)(2+x), & 0 \le x \le 2 \\
-0, & \text{elsewhere}
-\end{cases}
-\]
+Core Idea
+A city is divided into zones → zones have parking areas → areas have slots.
+Vehicles request parking → system allocates slots → handles cancellation + rollback → shows analytics via UI.
 
-Find:  
-(i) the value of \(A\)  
-(ii) \(P(X = \tfrac{1}{2})\)  
-(iii) \(P(X \le 1)\)  
-(iv) \(P(X \ge 2)\)  
-(v) \(P(1 \le X \le 2)\)
+Tech Stack (Recommended)
 
----
+Backend logic: C++ (DSA-heavy, sir-friendly)
 
-## Solution
+UI: Simple Web UI (HTML + CSS + JS) OR Console UI with menus
 
-### (i) Finding the value of \(A\)
+Data Storage: In-memory (arrays, linked lists, stacks, queues)
 
-For a valid probability density function,
+Reports: Daily report-dayX.md
 
-\[
-\int_{-\infty}^{\infty} f(x)\,dx = 1
-\]
 
-\[
-\int_0^2 A(2-x)(2+x)\,dx = 1
-\]
-
-**Simplify:**
-
-\[
-(2-x)(2+x) = 4 - x^2
-\]
-
-\[
-A\int_0^2 (4 - x^2)\,dx = 1
-\]
-
-\[
-A\left[4x - \frac{x^3}{3}\right]_0^2 = 1
-\]
-
-\[
-A\left(8 - \frac{8}{3}\right) = 1
-\]
-
-\[
-A\left(\frac{16}{3}\right) = 1
-\]
-
-\[
-\boxed{A = \frac{3}{16}}
-\]
 
 ---
 
-### (ii) Finding \(P(X = \tfrac{1}{2})\)
+2️⃣ Divide Work Between 2 Persons (Very Important)
 
-Since \(X\) is a continuous random variable, the probability at a single point is zero.
+👤 Person A – Core DSA & Backend Logic
 
-\[
-\boxed{P(X = \tfrac{1}{2}) = 0}
-\]
+Responsible for marks safety
 
----
+Zone, ParkingArea, ParkingSlot classes
 
-### (iii) Finding \(P(X \le 1)\)
+ParkingRequest lifecycle (state machine)
 
-\[
-P(X \le 1) = \int_0^1 \frac{3}{16}(4 - x^2)\,dx
-\]
+Allocation logic
 
-\[
-= \frac{3}{16}\left[4x - \frac{x^3}{3}\right]_0^1
-\]
+Rollback logic (stack-based)
 
-\[
-= \frac{3}{16}\left(4 - \frac{1}{3}\right)
-\]
+Analytics calculations
 
-\[
-= \frac{3}{16} \cdot \frac{11}{3}
-\]
+Unit test cases
 
-\[
-\boxed{P(X \le 1) = \frac{11}{16}}
-\]
 
----
+👤 Person B – UI + Integration + Reports
 
-### (iv) Finding \(P(X \ge 2)\)
+Responsible for no viva 😎
 
-The p.d.f. is zero for \(x > 2\), and the probability at \(x = 2\) is also zero.
+UI (web or menu-driven)
 
-\[
-\boxed{P(X \ge 2) = 0}
-\]
+Connect UI with backend
 
----
+Input validation
 
-### (v) Finding \(P(1 \le X \le 2)\)
+Visualization (tables, stats)
 
-\[
-P(1 \le X \le 2) = 1 - P(X \le 1)
-\]
+Daily reports
 
-\[
-= 1 - \frac{11}{16}
-\]
+Final documentation
 
-\[
-\boxed{P(1 \le X \le 2) = \frac{5}{16}}
-\]
+
+> ⚠️ BOTH should understand everything (sir may randomly ask).
+
+
+
 
 ---
 
-## Final Answers
+3️⃣ 1-Week Completion Plan (Daily Breakdown)
 
-\[
-\begin{aligned}
-\text{(i)}\;& A = \frac{3}{16} \\
-\text{(ii)}\;& P(X = \tfrac{1}{2}) = 0 \\
-\text{(iii)}\;& P(X \le 1) = \frac{11}{16} \\
-\text{(iv)}\;& P(X \ge 2) = 0 \\
-\text{(v)}\;& P(1 \le X \le 2) = \frac{5}{16}
-\end{aligned}
-\]
+📅 Day 1 – Project Setup & Design
+
+Finalize data structures
+
+Create folder structure
+
+Write design.md outline
+
+Push Day 1 report
+
+
+📅 Day 2 – Zone & Slot Management
+
+Implement:
+
+Zone
+
+ParkingArea
+
+ParkingSlot
+
+
+Basic slot availability logic
+
+Push Day 2 report
+
+
+📅 Day 3 – Parking Requests & State Machine
+
+ParkingRequest class
+
+Enforce valid transitions
+
+Prevent invalid state changes
+
+Push Day 3 report
+
+
+📅 Day 4 – Allocation Engine
+
+Same-zone allocation
+
+Cross-zone allocation + penalty
+
+First-available strategy
+
+Push Day 4 report
+
+
+📅 Day 5 – Cancellation & Rollback
+
+Stack-based rollback
+
+Undo last k allocations
+
+Restore slot + request state
+
+Push Day 5 report
+
+
+📅 Day 6 – Analytics + UI
+
+Average duration
+
+Zone utilization
+
+Peak zones
+
+UI screens
+
+Push Day 6 report
+
+
+📅 Day 7 – Testing & Final Touch
+
+10+ test cases
+
+Bug fixing
+
+README + screenshots
+
+Final report
+
+Push Day 7 report
+
+
+
+---
+
+4️⃣ Complete Folder & File Structure
+
+Smart-Parking-System/
+│
+├── src/
+│   ├── core/
+│   │   ├── Zone.h
+│   │   ├── Zone.cpp
+│   │   ├── ParkingArea.h
+│   │   ├── ParkingArea.cpp
+│   │   ├── ParkingSlot.h
+│   │   ├── ParkingSlot.cpp
+│   │   ├── Vehicle.h
+│   │   ├── Vehicle.cpp
+│   │   ├── ParkingRequest.h
+│   │   ├── ParkingRequest.cpp
+│   │
+│   ├── engine/
+│   │   ├── AllocationEngine.h
+│   │   ├── AllocationEngine.cpp
+│   │   ├── RollbackManager.h
+│   │   ├── RollbackManager.cpp
+│   │
+│   ├── system/
+│   │   ├── ParkingSystem.h
+│   │   ├── ParkingSystem.cpp
+│
+│   ├── main.cpp
+│
+├── ui/
+│   ├── index.html
+│   ├── style.css
+│   ├── app.js
+│
+├── tests/
+│   ├── test_allocation.cpp
+│   ├── test_rollback.cpp
+│   ├── test_states.cpp
+│
+├── reports/
+│   ├── report-day1.md
+│   ├── report-day2.md
+│   ├── report-day3.md
+│   ├── report-day4.md
+│   ├── report-day5.md
+│   ├── report-day6.md
+│   ├── report-day7.md
+│
+├── docs/
+│   ├── design.md
+│   ├── algorithms.md
+│
+├── README.md
+└── .gitignore
+
+
+---
+
+5️⃣ Terminal Command to Create Structure (One Shot)
+
+```bash
+mkdir -p Smart-Parking-System/{src/{core,engine,system},ui,tests,reports,docs}
+
+touch Smart-Parking-System/src/core/{Zone,ParkingArea,ParkingSlot,Vehicle,ParkingRequest}.{h,cpp}
+touch Smart-Parking-System/src/engine/{AllocationEngine,RollbackManager}.{h,cpp}
+touch Smart-Parking-System/src/system/{ParkingSystem}.{h,cpp}
+touch Smart-Parking-System/src/main.cpp
+
+touch Smart-Parking-System/ui/{index.html,style.css,app.js}
+
+touch Smart-Parking-System/tests/{test_allocation.cpp,test_rollback.cpp,test_states.cpp}
+
+touch Smart-Parking-System/reports/report-day{1..7}.md
+
+touch Smart-Parking-System/docs/{design.md,algorithms.md}
+
+touch Smart-Parking-System/{README.md,.gitignore}
+
+```bash
+
+---
+
+6️⃣ Daily Report Format (Use This)
+
+# Day X Report
+
+## Work Done
+- Implemented zone structure
+- Added parking slot logic
+
+## Data Structures Used
+- Arrays
+- Linked Lists
+
+## Issues Faced
+- Slot state sync issue
+
+## Next Day Plan
+- Implement allocation engine
+
+
+---
