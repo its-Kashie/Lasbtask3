@@ -65,7 +65,8 @@ The system follows a hierarchical spatial distribution to manage parking efficie
 │   └── 📄 `algorithms.md`
 ├── 📄 `README.md`
 └── 📄 `.gitignore`
-```bash
+
+```
 ---
 
 ## 💻 Setup Terminal Command
