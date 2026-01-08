@@ -87,3 +87,4 @@ Smart-Parking-System/tests/{test_allocation.cpp,test_rollback.cpp,test_states.cp
 Smart-Parking-System/reports/report-day{1..7}.md \
 Smart-Parking-System/docs/{design.md,algorithms.md} \
 Smart-Parking-System/{README.md,.gitignore}
+```
