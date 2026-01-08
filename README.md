@@ -36,7 +36,7 @@ The system follows a hierarchical spatial distribution to manage parking efficie
 ---
 
 ## 📂 Project Structure
-
+```bash
 📂 **Smart-Parking-System**
 ├── 📂 **src**
 │   ├── 📂 **core**
